@@ -1,0 +1,13 @@
+<mat-card class="nav_bar w-100 d-flex justify-content-end">
+  <button
+    class="btn btn-secondary"
+    mat-button [matMenuTriggerFor]="menu"
+    style="width: 220px; height: 35px;"
+  >
+   {{ user }}
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="logOut()">Log out</button>
+    <!-- <button mat-menu-item>Item 2</button> -->
+  </mat-menu>
+</mat-card>
