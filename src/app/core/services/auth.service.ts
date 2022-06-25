@@ -57,7 +57,7 @@ export class AuthService {
     })
     .pipe(
       catchError(err => {
-        const  errorMsg  = err.error.error;
+        const errorMsg  = err.error.error;
         this.showSnackBar(errorMsg, 'Fechar', 2000)
         return throwError(() => err)
       }),

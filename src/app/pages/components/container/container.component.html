@@ -1,0 +1,28 @@
+<app-nav-bar></app-nav-bar>
+
+<mat-drawer-container class="example-container w-100">
+  <mat-drawer mode="side" opened class="nav_bar">
+    <div class="icons-container mt-3">
+      <div class="icon d-flex flex-row align-items-center m-4">
+        <mat-icon style="color: rgb(0, 0, 0);">home</mat-icon>
+        <span routerLink="/" routerLinkActive="active">Início</span>
+      </div>
+
+      <div class="icon d-flex flex-row align-items-center m-4">
+        <mat-icon style="color: rgb(0, 0, 0);">book</mat-icon>
+        <span routerLink="/books" routerLinkActive="active">Livros</span>
+      </div>
+
+      <div class="icon d-flex flex-row align-items-center m-4">
+        <mat-icon style="color: rgb(0, 0, 0);">list</mat-icon>
+        <span routerLink="/" routerLinkActive="active">Pokémons</span>
+      </div>
+    </div>
+
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+
+</mat-drawer-container>

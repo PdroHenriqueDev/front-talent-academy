@@ -15,9 +15,14 @@ const routes: Routes = [
     loadChildren: () => import('./pages/register/register.module').then((m) => m.RegisterModule),
     canActivate: [SignedInGuard]
   },
+  // {
+  //   path: '',
+  //   loadChildren: () => import('./pages/home/home.module').then((m) => m.HomeModule),
+  //   canActivate: [AuthGuard]
+  // },
   {
     path: '',
-    loadChildren: () => import('./pages/home/home.module').then((m) => m.HomeModule),
+    loadChildren: () => import('./pages/components/container/container.module').then(m => m.ContainerModule),
     canActivate: [AuthGuard]
   },
   { path: '**', redirectTo: 'login' }

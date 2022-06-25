@@ -1,0 +1,11 @@
+{
+  "/affirmations": {
+    "target": "https://www.affirmations.dev/",
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite":{
+      "^/affirmations": ""
+    }
+  }
+}

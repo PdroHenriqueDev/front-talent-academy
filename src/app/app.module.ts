@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
-
+import { FormsModule } from "@angular/forms";
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -15,13 +15,14 @@ import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    FormsModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: JwtInterceptor,
     multi: true,
   }],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
