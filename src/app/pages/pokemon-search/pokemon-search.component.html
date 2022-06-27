@@ -1,0 +1,35 @@
+<div class="w-100 h-100 d-flex flex-column align-items-center">
+  <mat-form-field class="example-form-field w-50 mt-4" appearance="fill">
+    <div class="d-flex flex-row">
+      <div class="w-50">
+        <mat-label>Pesquisa</mat-label>
+        <input matInput type="text" [(ngModel)]="value" placeholder="Ex.: ditto" (keyup.enter)="getPokemon(value)">
+      </div>
+
+      <div class="w-50 d-flex justify-content-end">
+        <button class="btn" (click)="getPokemon(value)">
+          <mat-icon>search</mat-icon>
+        </button>
+      </div>
+    </div>
+
+  </mat-form-field>
+
+  <div class="w-50">
+    <mat-card *ngIf="pokemon.exists">
+      <div class="w-100 d-flex flex-column justify-content-center align-items-center">
+        <div class="image_container w-50 d-flex justify-content-center bg-light rounded border">
+          <img class="w-auto" [src]="pokemon.image" alt="pokemon's image">
+        </div>
+
+        <div class="w-50 d-flex justify-content-start flex-column mt-2 p-2 bg-light">
+          <div class="d-flex flex-row mt-1 w-100">
+            <p style="font-size: 12px; margin-right: 5px;" class="text-white p-1 card text-center bg-success" *ngFor="let type of pokemon.types">{{ type }}</p>
+          </div>
+          <h4 class="mt-1">{{ pokemon.name | titlecase }}</h4>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+
+</div>

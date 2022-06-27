@@ -24,7 +24,7 @@ export class BookService {
     const { apiURL } = environment;
     return id
       ? this.http.get(`${apiURL}/book?id=${id}`)
-      : this.http.get(`${apiURL}/book`)
+      : this.http.get(`${apiURL}/book`);
   }
 
   saveBook(data: Book) {

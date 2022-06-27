@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
-import { interval } from 'rxjs';
-import { takeWhile } from 'rxjs/operators';
-import { AffirmationsService } from './../../../core/services/affirmations.service';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -14,15 +11,12 @@ export class NavBarComponent implements OnInit {
 
   user: string = localStorage.getItem('user') ?? '';
 
-  constructor(
-    private router: Router,
-  ) { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
   }
 
   logOut() {
-    localStorage.clear();
-    this.router.navigateByUrl('/login');
+    this.authService.logOut()
   }
 }

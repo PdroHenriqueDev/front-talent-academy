@@ -10,8 +10,6 @@ import { NavBarComponent } from '../nav-bar/nav-bar.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
-
-
 @NgModule({
   declarations: [
     ContainerComponent,

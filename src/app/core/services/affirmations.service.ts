@@ -13,7 +13,6 @@ export class AffirmationsService {
   constructor(
     private http: HttpClient,
     private snackBar:MatSnackBar,
-    private router: Router,
   ) { }
 
   showSnackBar(msg: string, action: string, time: number) {

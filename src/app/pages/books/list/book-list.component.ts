@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { BookService } from 'src/app/core/services/book.service';
 import { Book } from 'src/app/models/book';
-import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatDialog } from '@angular/material/dialog';
 import { BookFormDialog } from './book-form/book-form-dialog';
 import { DialogElementsExampleDialog } from './dialog/dialog-elements-example-dialog';

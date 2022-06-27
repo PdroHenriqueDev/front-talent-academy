@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { CanActivate, Router, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthService } from '../services/auth.service';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -24,8 +23,9 @@ export class AuthGuard implements CanActivate {
   }
 
   get isLoggedIn(): boolean {
-    const user = localStorage.getItem('token') as string;
-    return user ? true : false;
+    const token = localStorage.getItem('token') as string;
+    const userIsLogged = token;
+    return userIsLogged ? true : false;
   }
 
 }

@@ -3,7 +3,6 @@ import { HttpClient } from "@angular/common/http";
 import { environment } from 'src/environments/environment';
 import { catchError, throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
-
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
@@ -39,6 +38,7 @@ export class AuthService {
       map((res: any) => {
         if (!res?.error) {
           localStorage.setItem('token', res.data.token);
+          localStorage.setItem('refreshToken', res.data.refreshToken);
           localStorage.setItem('user', res.data.user.name);
           localStorage.setItem('login_date', new Date().toDateString())
           this.router.navigateByUrl('/');
@@ -46,6 +46,11 @@ export class AuthService {
         }
       })
     )
+  }
+
+  logOut() {
+    localStorage.clear();
+    this.router.navigateByUrl('/login');
   }
 
   register(name: string, email: string, password: string) {
